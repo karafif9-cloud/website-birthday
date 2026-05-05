@@ -1,34 +1,16 @@
 import { Link } from "react-router-dom";
-import { Camera, Film, Mail, ArrowLeft } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import FloatingShapes from "@/components/FloatingShapes";
 import MusicToggle from "@/components/MusicToggle";
+import cameraImg from "@/assets/menu-camera.png";
+import videoImg from "@/assets/menu-video.png";
+import letterImg from "@/assets/menu-letter.png";
 
 const cards = [
-  {
-    to: "/photos",
-    icon: Camera,
-    title: "Photos",
-    desc: "A gallery of beautiful moments",
-    anim: "group-hover:rotate-[-8deg] group-hover:scale-110",
-    float: "animate-float",
-  },
-  {
-    to: "/videos",
-    icon: Film,
-    title: "Videos",
-    desc: "Memories captured in motion",
-    anim: "group-hover:translate-x-1 group-hover:scale-110",
-    float: "animate-float-slow",
-  },
-  {
-    to: "/messages",
-    icon: Mail,
-    title: "Messages",
-    desc: "Heartfelt words just for you",
-    anim: "group-hover:-translate-y-2 group-hover:scale-110",
-    float: "animate-float",
-  },
+  { to: "/photos", img: cameraImg, title: "Photos", desc: "A gallery of beautiful moments" },
+  { to: "/videos", img: videoImg, title: "Videos", desc: "Memories captured in motion" },
+  { to: "/messages", img: letterImg, title: "Messages", desc: "Heartfelt words just for you" },
 ];
 
 const Menu = () => {
@@ -56,20 +38,21 @@ const Menu = () => {
               className="group flex flex-col items-center gap-4 animate-slide-up outline-none"
               style={{ animationDelay: `${i * 0.15}s` }}
             >
-              <div
-                className={`relative flex items-center justify-center w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-mint shadow-glow border border-primary/30 transition-all duration-500 group-hover:shadow-[0_0_60px_hsl(145_90%_75%/0.7)] ${c.float}`}
-              >
-                <span className="absolute inset-0 rounded-full bg-primary/20 scale-100 group-hover:scale-125 opacity-0 group-hover:opacity-100 transition-all duration-700" />
-                <c.icon
-                  className={`relative h-14 w-14 md:h-16 md:w-16 text-primary-deep transition-transform duration-500 ${c.anim}`}
-                  strokeWidth={1.75}
+              <div className="relative flex items-center justify-center w-40 h-40 md:w-48 md:h-48 rounded-full transition-all duration-500 group-hover:drop-shadow-[0_10px_30px_hsl(145_70%_60%/0.45)]">
+                <img
+                  src={c.img}
+                  alt={c.title}
+                  width={512}
+                  height={512}
+                  loading="lazy"
+                  className="w-full h-full object-contain transition-transform duration-300 group-hover:animate-wiggle"
                 />
               </div>
               <div className="text-center">
-                <h2 className="text-xl md:text-2xl font-bold text-primary-deep group-hover:tracking-wide transition-all">
+                <h2 className="text-xl md:text-2xl font-bold text-primary-deep transition-all">
                   {c.title}
                 </h2>
-                <p className="text-sm text-muted-foreground mt-1 max-w-[200px]">
+                <p className="text-sm text-muted-foreground mt-1 max-w-[220px]">
                   {c.desc}
                 </p>
               </div>
