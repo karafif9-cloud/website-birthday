@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Image, Video, Mail } from "lucide-react";
+import { Image, Video, Mail, ArrowLeft } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import FloatingShapes from "@/components/FloatingShapes";
 import MusicToggle from "@/components/MusicToggle";
@@ -17,6 +17,13 @@ const Menu = () => {
       <Navbar />
       <MusicToggle />
       <main className="max-w-6xl mx-auto px-6 pt-32 pb-20">
+        <Link
+          to="/"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/70 backdrop-blur border border-primary/20 text-primary-deep text-sm font-medium shadow-soft hover:bg-primary/20 hover:scale-105 transition-all animate-fade-in mb-8"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Kembali
+        </Link>
         <header className="text-center mb-16 animate-fade-in">
           <h1 className="text-4xl md:text-6xl font-bold text-primary-deep mb-4">Choose your surprise</h1>
           <p className="text-lg text-muted-foreground">Three little gifts, all for you ✨</p>
