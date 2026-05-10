@@ -13,7 +13,7 @@ const FloatingShapes = () => (
     {shapes.map((s, i) => (
       <div
         key={i}
-        className="absolute rounded-full bg-gradient-mint animate-float-slow blur-2xl"
+        className="absolute rounded-full bg-gradient-mint blur-2xl group-hover:animate-float-slow"
         style={{
           width: s.size,
           height: s.size,
@@ -21,6 +21,9 @@ const FloatingShapes = () => (
           left: s.left,
           opacity: s.opacity,
           animationDelay: s.delay,
+          animationDuration: `${14 + i * 2}s`,
+          animationTimingFunction: "ease-in-out",
+          animationDirection: "alternate",
         }}
       />
     ))}

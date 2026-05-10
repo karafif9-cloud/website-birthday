@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import confetti from "canvas-confetti";
 import FloatingShapes from "@/components/FloatingShapes";
 import MusicToggle from "@/components/MusicToggle";
-import { Sparkles } from "lucide-react";
+import { Heart, Sparkles } from "lucide-react";
 
 const NAME = "Beautiful";
 
@@ -27,7 +27,7 @@ const Index = () => {
 
   return (
     <div
-      className={`relative min-h-screen overflow-hidden bg-gradient-hero transition-opacity duration-500 ${
+      className={`group relative min-h-screen overflow-hidden bg-gradient-hero transition-opacity duration-500 ${
         leaving ? "opacity-0" : "opacity-100"
       }`}
     >
@@ -47,30 +47,35 @@ const Index = () => {
           onClick={handleOpen}
           aria-label="Open birthday letter"
           className={`group relative outline-none transition-transform duration-500 ${
-            opened ? "scale-110" : "hover:scale-105 animate-float"
+            opened ? "scale-110" : "hover:scale-[1.02]"
           }`}
           style={{ perspective: "1200px" }}
         >
           <div className="relative w-[300px] h-[200px] md:w-[380px] md:h-[250px]">
             {/* Envelope body */}
-            <div className="absolute inset-0 rounded-xl bg-white shadow-glow border border-primary/30" />
+            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50 shadow-glow border border-amber-200/80 transition-all duration-700 group-hover:shadow-[0_0_60px_hsl(8_70%_70%_/_0.28)]" />
 
             {/* Letter coming out */}
             <div
-              className={`absolute left-1/2 -translate-x-1/2 w-[88%] rounded-lg bg-white shadow-soft border border-primary/20 p-5 text-left transition-all duration-1000 ease-out ${
+              className={`absolute left-1/2 -translate-x-1/2 w-[88%] rounded-lg bg-gradient-to-b from-amber-50 via-white to-rose-50 shadow-soft border border-amber-200/80 p-5 text-left transition-all duration-[1800ms] ease-out ${
                 opened
                   ? "bottom-[40%] opacity-100 translate-y-[-60%]"
                   : "bottom-2 opacity-0"
               }`}
               style={{ zIndex: 1 }}
             >
-              <p className="text-xs md:text-sm text-muted-foreground mb-1">Dear {NAME},</p>
-              <p className="text-sm md:text-base font-semibold text-primary-deep">
-                Happy Birthday 🎉
+              <p className="text-xs md:text-sm text-muted-foreground mb-1">My Dearest {NAME},</p>
+              <p className="text-sm md:text-base font-semibold text-primary-deep flex items-center gap-1.5 tracking-wide">
+                On Your Special Day
+                <Heart className="h-4 w-4 fill-rose-500 text-rose-500" />
               </p>
-              <p className="text-[11px] md:text-xs text-muted-foreground mt-1">
-                Open the menu for a surprise...
+              <p className="text-[11px] md:text-xs text-muted-foreground mt-1 italic">
+                With timeless love, warm wishes, and all my heart.
               </p>
+              <div className="mt-3 flex items-center justify-between text-[10px] md:text-[11px] text-rose-500/90">
+                <span>sealed with love</span>
+                <span>forever yours</span>
+              </div>
             </div>
 
             {/* Envelope back pocket (front of envelope, covers letter bottom) */}
@@ -84,13 +89,13 @@ const Index = () => {
               style={{
                 zIndex: 2,
                 background:
-                  "linear-gradient(135deg, transparent 49%, hsl(var(--primary) / 0.25) 50%) bottom left / 50% 55% no-repeat, linear-gradient(225deg, transparent 49%, hsl(var(--primary) / 0.25) 50%) bottom right / 50% 55% no-repeat",
+                  "linear-gradient(135deg, transparent 49%, hsl(20 60% 78% / 0.55) 50%) bottom left / 50% 55% no-repeat, linear-gradient(225deg, transparent 49%, hsl(20 60% 78% / 0.55) 50%) bottom right / 50% 55% no-repeat",
               }}
             />
 
             {/* Envelope flap (top, opens) */}
             <div
-              className="absolute top-0 left-0 w-full origin-top transition-transform duration-700 ease-in-out"
+              className="absolute top-0 left-0 w-full origin-top transition-transform duration-[1400ms] ease-in-out"
               style={{
                 height: "55%",
                 transformStyle: "preserve-3d",
@@ -102,7 +107,7 @@ const Index = () => {
                 className="w-full h-full"
                 style={{
                   background:
-                    "linear-gradient(180deg, hsl(var(--primary)) 0%, hsl(var(--primary) / 0.85) 100%)",
+                    "linear-gradient(180deg, hsl(18 62% 78%) 0%, hsl(14 55% 68%) 100%)",
                   clipPath: "polygon(0 0, 100% 0, 50% 100%)",
                   borderTopLeftRadius: "0.75rem",
                   borderTopRightRadius: "0.75rem",
@@ -112,19 +117,19 @@ const Index = () => {
 
             {/* Wax seal */}
             <div
-              className={`absolute left-1/2 top-[42%] -translate-x-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-primary to-primary-deep shadow-soft flex items-center justify-center text-white text-xl transition-opacity duration-300 ${
+              className={`absolute left-1/2 top-[42%] -translate-x-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-rose-700 via-rose-800 to-red-900 shadow-soft flex items-center justify-center text-white text-xl transition-opacity duration-500 ${
                 opened ? "opacity-0" : "opacity-100"
               }`}
               style={{ zIndex: 4 }}
             >
-              💌
+              <Heart className="h-6 w-6 md:h-7 md:w-7 fill-amber-50 text-amber-50" />
             </div>
           </div>
 
           {/* Hint */}
           <p
             className={`mt-8 text-base md:text-lg text-primary-deep font-medium transition-opacity duration-300 ${
-              opened ? "opacity-0" : "opacity-100 animate-glow-pulse"
+              opened ? "opacity-0" : "opacity-100 group-hover:animate-[glow-pulse_4.5s_ease-in-out_infinite]"
             }`}
           >
             Tap to open ✨
