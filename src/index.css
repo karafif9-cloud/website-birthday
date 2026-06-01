@@ -8,45 +8,54 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 150 60% 98%;
-    --foreground: 160 25% 18%;
+    /* Brand: #F9CDD5 (pink) · #7A8450 (olive) */
+    --brand-pink: 351 80% 89%;
+    --brand-olive: 72 25% 42%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 160 25% 18%;
+    --background: 351 62% 90%;
+    --foreground: 72 28% 18%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 160 25% 18%;
+    --card: 351 45% 92%;
+    --card-foreground: 72 28% 18%;
 
-    --primary: 145 70% 70%;
-    --primary-foreground: 160 40% 15%;
+    --popover: 351 45% 92%;
+    --popover-foreground: 72 28% 18%;
 
-    --primary-glow: 145 90% 85%;
-    --primary-deep: 160 50% 35%;
+    --primary: 72 25% 42%;
+    --primary-foreground: 351 60% 98%;
 
-    --secondary: 150 40% 95%;
-    --secondary-foreground: 160 30% 25%;
+    --primary-glow: 351 80% 92%;
+    --primary-deep: 72 30% 32%;
 
-    --muted: 150 30% 96%;
-    --muted-foreground: 160 15% 45%;
+    --secondary: 72 18% 84%;
+    --secondary-foreground: 72 25% 28%;
 
-    --accent: 145 60% 92%;
-    --accent-foreground: 160 40% 20%;
+    --muted: 351 35% 86%;
+    --muted-foreground: 72 18% 32%;
+
+    --accent: 351 70% 86%;
+    --accent-foreground: 72 28% 22%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 150 30% 90%;
-    --input: 150 30% 90%;
-    --ring: 145 70% 60%;
+    --border: 351 30% 82%;
+    --input: 351 30% 82%;
+    --ring: 72 25% 42%;
 
     --radius: 1rem;
 
-    --gradient-mint: linear-gradient(135deg, hsl(145 80% 90%), hsl(150 70% 95%));
-    --gradient-hero: linear-gradient(135deg, hsl(145 90% 92%) 0%, hsl(0 0% 100%) 50%, hsl(150 70% 94%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(145 60% 96%) 100%);
-    --shadow-soft: 0 10px 40px -10px hsl(145 60% 60% / 0.25);
-    --shadow-glow: 0 0 60px hsl(145 90% 80% / 0.5);
-    --shadow-card: 0 4px 20px -4px hsl(160 40% 50% / 0.15);
+    --gradient-mint: linear-gradient(135deg, hsl(351 75% 87%), hsl(72 22% 80%));
+    --gradient-hero: linear-gradient(
+      145deg,
+      hsl(351 70% 88%) 0%,
+      hsl(351 55% 85%) 40%,
+      hsl(72 20% 82%) 100%
+    );
+    --gradient-card: linear-gradient(145deg, hsl(351 50% 90%) 0%, hsl(72 15% 86%) 100%);
+    --shadow-soft: 0 10px 40px -10px hsl(72 25% 42% / 0.2);
+    --shadow-glow: 0 0 60px hsl(351 80% 85% / 0.55);
+    --shadow-card: 0 4px 20px -4px hsl(72 25% 42% / 0.18);
 
     --sidebar-background: 0 0% 98%;
 

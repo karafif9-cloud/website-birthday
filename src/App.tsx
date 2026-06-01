@@ -9,12 +9,13 @@ import Photos from "./pages/Photos.tsx";
 import Videos from "./pages/Videos.tsx";
 import Messages from "./pages/Messages.tsx";
 import NotFound from "./pages/NotFound.tsx";
-
+import { BackgroundMusicProvider } from "@/contexts/BackgroundMusicContext";
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <BackgroundMusicProvider>
       <Toaster />
       <Sonner />
       <BrowserRouter>
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      </BackgroundMusicProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );

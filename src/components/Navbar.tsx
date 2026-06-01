@@ -6,7 +6,7 @@ const Navbar = () => {
   const location = useLocation();
   const isMenu = location.pathname === "/menu";
   return (
-    <nav className="fixed top-0 left-0 right-0 z-40 bg-background/70 backdrop-blur-lg border-b border-border/50">
+    <nav className="fixed top-0 left-0 right-0 z-40 bg-background/85 backdrop-blur-lg border-b border-primary/20">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link to="/menu" className="flex items-center gap-2 text-primary-deep font-semibold text-lg">
           <Cake className="h-5 w-5" />

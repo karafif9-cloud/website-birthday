@@ -2,10 +2,11 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import confetti from "canvas-confetti";
 import FloatingShapes from "@/components/FloatingShapes";
+import FallingFlowers from "@/components/FallingFlowers";
 import MusicToggle from "@/components/MusicToggle";
 import { Heart, Sparkles } from "lucide-react";
 
-const NAME = "Beautiful";
+const NAME = "Safira";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ const Index = () => {
   const handleOpen = () => {
     if (opened) return;
     setOpened(true);
-    const colors = ["#98FF98", "#B0F2C2", "#ffffff", "#7CE3A8"];
+    const colors = ["#F9CDD5", "#7A8450", "#d4a8b0", "#9aa86a"];
     setTimeout(() => {
       confetti({ particleCount: 120, spread: 90, origin: { y: 0.5 }, colors });
       confetti({ particleCount: 80, angle: 60, spread: 70, origin: { x: 0 }, colors });
@@ -32,9 +33,15 @@ const Index = () => {
       }`}
     >
       <FloatingShapes />
+      <FallingFlowers />
       <MusicToggle />
 
-      <main className="relative min-h-screen flex flex-col items-center justify-center text-center px-6">
+      <main className="relative z-10 min-h-screen flex flex-col items-center text-center px-6 pt-20 md:pt-24 pb-8">
+        <h1 className="animate-fade-in text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-deep leading-tight tracking-tight mb-6 md:mb-10">
+          Happy Birthday Safira
+        </h1>
+
+        <div className="flex flex-1 flex-col items-center justify-center w-full">
         <div className="animate-fade-in mb-8">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/30 text-primary-deep text-sm font-medium shadow-soft">
             <Sparkles className="h-4 w-4" />
@@ -53,11 +60,11 @@ const Index = () => {
         >
           <div className="relative w-[300px] h-[200px] md:w-[380px] md:h-[250px]">
             {/* Envelope body */}
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50 shadow-glow border border-amber-200/80 transition-all duration-700 group-hover:shadow-[0_0_60px_hsl(8_70%_70%_/_0.28)]" />
+            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-[#F9CDD5] via-[#f0b8c2] to-primary/25 shadow-glow border border-primary/30 transition-all duration-700 group-hover:shadow-[0_0_60px_hsl(351_80%_85%_/_0.35)]" />
 
             {/* Letter coming out */}
             <div
-              className={`absolute left-1/2 -translate-x-1/2 w-[88%] rounded-lg bg-gradient-to-b from-amber-50 via-white to-rose-50 shadow-soft border border-amber-200/80 p-5 text-left transition-all duration-[1800ms] ease-out ${
+              className={`absolute left-1/2 -translate-x-1/2 w-[88%] rounded-lg bg-gradient-to-b from-[#F9CDD5] via-secondary to-accent shadow-soft border border-primary/25 p-5 text-left transition-all duration-[1800ms] ease-out ${
                 opened
                   ? "bottom-[40%] opacity-100 translate-y-[-60%]"
                   : "bottom-2 opacity-0"
@@ -67,12 +74,12 @@ const Index = () => {
               <p className="text-xs md:text-sm text-muted-foreground mb-1">My Dearest {NAME},</p>
               <p className="text-sm md:text-base font-semibold text-primary-deep flex items-center gap-1.5 tracking-wide">
                 On Your Special Day
-                <Heart className="h-4 w-4 fill-rose-500 text-rose-500" />
+                <Heart className="h-4 w-4 fill-primary text-primary" />
               </p>
               <p className="text-[11px] md:text-xs text-muted-foreground mt-1 italic">
                 With timeless love, warm wishes, and all my heart.
               </p>
-              <div className="mt-3 flex items-center justify-between text-[10px] md:text-[11px] text-rose-500/90">
+              <div className="mt-3 flex items-center justify-between text-[10px] md:text-[11px] text-primary-deep/80">
                 <span>sealed with love</span>
                 <span>forever yours</span>
               </div>
@@ -89,7 +96,7 @@ const Index = () => {
               style={{
                 zIndex: 2,
                 background:
-                  "linear-gradient(135deg, transparent 49%, hsl(20 60% 78% / 0.55) 50%) bottom left / 50% 55% no-repeat, linear-gradient(225deg, transparent 49%, hsl(20 60% 78% / 0.55) 50%) bottom right / 50% 55% no-repeat",
+                  "linear-gradient(135deg, transparent 49%, hsl(72 25% 42% / 0.2) 50%) bottom left / 50% 55% no-repeat, linear-gradient(225deg, transparent 49%, hsl(72 25% 42% / 0.2) 50%) bottom right / 50% 55% no-repeat",
               }}
             />
 
@@ -107,7 +114,7 @@ const Index = () => {
                 className="w-full h-full"
                 style={{
                   background:
-                    "linear-gradient(180deg, hsl(18 62% 78%) 0%, hsl(14 55% 68%) 100%)",
+                    "linear-gradient(180deg, hsl(351 80% 89%) 0%, hsl(72 25% 42% / 0.85) 100%)",
                   clipPath: "polygon(0 0, 100% 0, 50% 100%)",
                   borderTopLeftRadius: "0.75rem",
                   borderTopRightRadius: "0.75rem",
@@ -117,12 +124,12 @@ const Index = () => {
 
             {/* Wax seal */}
             <div
-              className={`absolute left-1/2 top-[42%] -translate-x-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-rose-700 via-rose-800 to-red-900 shadow-soft flex items-center justify-center text-white text-xl transition-opacity duration-500 ${
+              className={`absolute left-1/2 top-[42%] -translate-x-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-primary via-primary-deep to-primary-deep shadow-soft flex items-center justify-center text-primary-foreground text-xl transition-opacity duration-500 ${
                 opened ? "opacity-0" : "opacity-100"
               }`}
               style={{ zIndex: 4 }}
             >
-              <Heart className="h-6 w-6 md:h-7 md:w-7 fill-amber-50 text-amber-50" />
+              <Heart className="h-6 w-6 md:h-7 md:w-7 fill-primary-foreground text-primary-foreground" />
             </div>
           </div>
 
@@ -136,8 +143,9 @@ const Index = () => {
           </p>
         </button>
 
-        <div className="absolute bottom-8 text-sm text-muted-foreground/70 animate-fade-in">
+        <p className="mt-10 text-sm text-muted-foreground/70 animate-fade-in">
           Made with 💚 just for you
+        </p>
         </div>
       </main>
     </div>
