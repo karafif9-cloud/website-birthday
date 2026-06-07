@@ -12,7 +12,8 @@ const message = {
     "Katanya, makin dewasa, ulang tahun bukan lagi soal seberapa ramai pesta, tapi tentang siapa yang tetap tinggal saat dunia lagi tidak baik-baik saja. Lewat momen ini, aku berharap kamu tahu kalau kamu selalu bisa menghandalkanku untuk itu.",
     "Isi tulisan ini tidak lebih dari sekedar harapan dan doa. Terima kasih ya, sudah mengizinkan aku menjadi salah satu dari bagian dari cerita mu di sepanjang tahun lalu dan kini.",
     "Aku tahu betul betapa banyaknya tawa, tangis, dan lelah yang kamu lewati di tahun sebelum-belumnya. Karena itu, aku bersyukur bisa merayakanmu di tahun ini, dan kamu pantas dirayakan, meskipun kecil-kecilan.",
-    "Terima kasih karena sudah selalu berusaha mencari alasan untuk tetap bertahan dan berjuang. Semoga di usia ini, tangki cintamu terisi penuh, duniamu terasa lebih teduh, selalu sehat dan panjang umurnya, dan perlahan mimpi-mimpimu itu tumbuh menjadi utuh. 💚",
+    "Terima kasih karena sudah selalu berusaha mencari alasan untuk tetap bertahan dan berjuang. Semoga di usia ini, tangki cintamu terisi penuh, duniamu terasa lebih teduh, selalu sehat dan panjang umurnya, dan perlahan mimpi-mimpimu itu tumbuh menjadi utuh.",
+    "Live well, i always pray for uou here and of course. i always support whatever choice you make, as long it,s good for you beloved. I LOVE YOU SO MUCH 💚",
   ],
 };
 
